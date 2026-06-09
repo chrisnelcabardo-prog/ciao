@@ -33,6 +33,7 @@ img{
 }
 h1{
     color:#ff4d6d;
+    font-size: 24px;
 }
 button{
     border:none;
@@ -55,7 +56,7 @@ input[type="date"]{
 
 <div class="card" id="card">
     <h1>Hi Jaymee 😊</h1>
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWp0eWZ6bXFieXN6Znd4Y3RxM3V6bW95ZXN5b3Y0d3Z3dW95Y3Z6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/C9x8gX02SnMIoAclby/giphy.gif" alt="Cute Cat">
+    <img src="https://media.tenor.com/w1-v6T8A8gIAAAAi/cat-sweet.gif" alt="Cute Cat">
     <p>I made something for you ❤️</p>
     <button class="yes" onclick="start()">Continue</button>
 </div>
@@ -64,7 +65,7 @@ input[type="date"]{
 function start(){
     document.getElementById("card").innerHTML = `
         <h1>Would you like to hang out with me after class, or on a day that works best for you? 😊❤️</h1>
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW90M3R5N3M1ZHp5Y2pjeXF0YnkybHpxbXg0ZnV5cnA0cXN5Y2p6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/t372fGo6fIdI7E8EGm/giphy.gif" alt="Happy Cat">
+        <img src="https://media.tenor.com/wP0H-VfUaYgAAAAi/mochi-peach.gif" alt="Happy Cat">
         <br>
         <button class="yes" onclick="showDatePicker()">Yes ❤️</button>
         <button class="no" onclick="confirmNo()">No 😔</button>
@@ -74,7 +75,7 @@ function start(){
 function confirmNo(){
     document.getElementById("card").innerHTML = `
         <h1>Are you sure? 🥺</h1>
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzh0M3I5M3Yzd3B5Ynp5c3RxM3V6bW95ZXN5b3Y0d3Z3dW95Y3Z6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/v7r86817812I70T8fC/giphy.gif" alt="Sad Cat">
+        <img src="https://media.tenor.com/m2pB2h3B3p0AAAAi/cat-cry.gif" alt="Sad Cat">
         <p>Think carefully before making the cats sad.</p>
         <button class="no" onclick="showSadCat()">Yes, I'm sure 😔</button>
         <button class="yes" onclick="start()">No, wait 🥺</button>
@@ -84,7 +85,7 @@ function confirmNo(){
 function showSadCat(){
     document.getElementById("card").innerHTML = `
         <h1>The cat is sad now 😿</h1>
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXN0Y3F5M3V6bW95ZXN5b3Y0d3Z3dW95Y3Z6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/7Y6fG1T4AAnV7H8C7B/giphy.gif" alt="Very Sad Cat">
+        <img src="https://media.tenor.com/T0T_v9v6580AAAAi/peach-cat-crying.gif" alt="Very Sad Cat">
         <p>The cats were hoping you'd say yes.</p>
         <p>But thank you for being honest ❤️</p>
     `;
@@ -93,7 +94,7 @@ function showSadCat(){
 function showDatePicker(){
     document.getElementById("card").innerHTML = `
         <h1>Yay! 🎉</h1>
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3N0Y3F5M3V6bW95ZXN5b3Y0d3Z3dW95Y3Z6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9fUVOLfLR7XEDw6M63/giphy.gif" alt="Excited Cat">
+        <img src="https://media.tenor.com/0i_p5wzFmY8AAAAi/hearts-cats.gif" alt="Excited Cat">
         <p>You just made my day ❤️</p>
         <p>When would you like us to hang out? 😊</p>
         <input type="date" id="datePicker">
