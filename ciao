@@ -1,0 +1,259 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Special Invitation ❤️</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#ffd6e0,#ffeef5);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+.card{
+    background:white;
+    width:90%;
+    max-width:450px;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+img{
+    width:250px;
+    border-radius:20px;
+    margin-bottom:15px;
+}
+
+h1{
+    color:#ff4d6d;
+}
+
+button{
+    border:none;
+    border-radius:12px;
+    padding:12px 24px;
+    margin:8px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#yesBtn{
+    background:#4CAF50;
+    color:white;
+}
+
+#noBtn{
+    background:#f44336;
+    color:white;
+}
+
+input[type="date"]{
+    padding:10px;
+    font-size:16px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    top:-20px;
+    animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
+</style>
+
+<script>
+(function(){
+    emailjs.init({
+        publicKey: "c2zS-SX0xFXHPRgIn"
+    });
+})();
+</script>
+
+</head>
+<body>
+
+<div class="card" id="card">
+
+    <h1>Hi 😊</h1>
+
+    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=600"
+         alt="Cute Cat">
+
+    <p>
+        Hi Jaymee I made something for you. ❤️
+    </p>
+
+    <button onclick="start()">
+        Continue
+    </button>
+
+</div>
+
+<script>
+
+function start(){
+
+    document.getElementById("card").innerHTML = `
+
+        <h1>Can I have a date with you? ❤️</h1>
+
+        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=600"
+             alt="Cute Cat">
+
+        <p>
+            I have been wanting to ask you this for a while. 😊
+        </p>
+
+        <button id="yesBtn">Yes ❤️</button>
+        <button id="noBtn">No 🙈</button>
+
+    `;
+
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    let size = 18;
+
+    noBtn.addEventListener("click", () => {
+        size += 8;
+        yesBtn.style.fontSize = size + "px";
+    });
+
+    yesBtn.addEventListener("click", showDatePicker);
+}
+
+function showDatePicker(){
+
+    confetti();
+
+    document.getElementById("card").innerHTML = `
+
+        <h1>Yay! 🎉</h1>
+
+        <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=600"
+             alt="Happy Cat">
+
+        <p>
+            You just made my day. ❤️
+        </p>
+
+        <p>
+            I'd love to spend some time with you. 😊
+        </p>
+
+        <p>
+            When would you like us to go on our date?
+        </p>
+
+        <input type="date" id="datePicker">
+
+        <br><br>
+
+        <button id="yesBtn" onclick="confirmDate()">
+            Choose This Date ❤️
+        </button>
+
+    `;
+}
+
+function confirmDate(){
+
+    const selectedDate =
+        document.getElementById("datePicker").value;
+
+    if(!selectedDate){
+        alert("Please choose a date first 😊");
+        return;
+    }
+
+    emailjs.send(
+        "chrisnel885",
+        "template_xmpfzyj",
+        {
+            selected_date: selectedDate
+        }
+    )
+    .then(() => {
+
+        confetti();
+
+        document.getElementById("card").innerHTML = `
+
+            <h1>Thank You ❤️</h1>
+
+            <p>
+                Date selected:
+                <strong>${selectedDate}</strong>
+            </p>
+
+            <p>
+                Looking forward to seeing you. 😊
+            </p>
+
+        `;
+    })
+    .catch(() => {
+
+        document.getElementById("card").innerHTML = `
+
+            <h1>Thank You Jaymee ❤️</h1>
+
+            <p>
+                Date selected:
+                <strong>${selectedDate}</strong>
+            </p>
+
+            <p>
+                Looking forward to seeing you. 😊
+            </p>
+
+        `;
+    });
+}
+
+function confetti(){
+
+    for(let i=0;i<80;i++){
+
+        const c = document.createElement("div");
+
+        c.classList.add("confetti");
+
+        c.style.left = Math.random()*100 + "vw";
+
+        c.style.background =
+            `hsl(${Math.random()*360},100%,50%)`;
+
+        document.body.appendChild(c);
+
+        setTimeout(() => c.remove(), 4000);
+    }
+}
+
+</script>
+
+</body>
+</html>
+```
+
