@@ -95,10 +95,9 @@ input[type="date"]{
 
 <div class="card" id="card">
 
-    <h1>Hi 😊</h1>
+    <h1>Hi Jaymee 😊</h1>
 
-    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=600"
-         alt="Cute Cat">
+    <https://pin.it/1QVKUX1IQ>
 
     <p>
         Hi Jaymee I made something for you. ❤️
@@ -112,38 +111,76 @@ input[type="date"]{
 
 <script>
 
+```javascript
 function start(){
 
     document.getElementById("card").innerHTML = `
 
-        <h1>Can I have a date with you? ❤️</h1>
+        <h1>
+        Would you like to hang out with me after class,
+        or on a day that works best for you? 😊❤️
+        </h1>
 
-        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=600"
-             alt="Cute Cat">
+        <https://pin.it/7nnoXFL4E>
 
-        <p>
-            I have been wanting to ask you this for a while. 😊
-        </p>
+        <br>
 
         <button id="yesBtn">Yes ❤️</button>
-        <button id="noBtn">No 🙈</button>
+        <button id="noBtn">No 😔</button>
 
     `;
 
-    const yesBtn = document.getElementById("yesBtn");
-    const noBtn = document.getElementById("noBtn");
+    document
+        .getElementById("yesBtn")
+        .addEventListener("click", showDatePicker);
 
-    let size = 18;
-
-    noBtn.addEventListener("click", () => {
-        size += 8;
-        yesBtn.style.fontSize = size + "px";
-    });
-
-    yesBtn.addEventListener("click", showDatePicker);
+    document
+        .getElementById("noBtn")
+        .addEventListener("click", confirmNo);
 }
 
-function showDatePicker(){
+function confirmNo(){
+
+    document.getElementById("card").innerHTML = `
+
+        <h1>Are you sure? 🥺</h1>
+
+        <https://pin.it/1STrehOTt>
+
+        <p>
+        Think carefully before making the cats sad.
+        </p>
+
+        <button onclick="showSadCat()">
+            Yes, I'm sure 😔
+        </button>
+
+        <button onclick="start()">
+            No, wait 🥺
+        </button>
+
+    `;
+}
+
+function showSadCat(){
+
+    document.getElementById("card").innerHTML = `
+
+        <h1>The cat is sad now 😿</h1>
+
+        <https://pin.it/40W46OeIW>
+
+        <p>
+        The cats were hoping you'd say yes.
+        </p>
+
+        <p>
+        But thank you for being honest. ❤️
+        </p>
+
+    `;
+}
+```
 
     confetti();
 
@@ -151,8 +188,7 @@ function showDatePicker(){
 
         <h1>Yay! 🎉</h1>
 
-        <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=600"
-             alt="Happy Cat">
+        <https://pin.it/4WWz9kGkj>
 
         <p>
             You just made my day. ❤️
