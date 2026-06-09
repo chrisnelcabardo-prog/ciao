@@ -5,150 +5,208 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Special Invitation ❤️</title>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 <style>
 body{
     margin:0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffd6e0, #ffeef5);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#ffd6e0,#ffeef5);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow-x:hidden;
 }
 
 .card{
-    background: white;
-    width: 90%;
-    max-width: 450px;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    background:white;
+    width:90%;
+    max-width:450px;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
 img{
-    width: 250px;
-    height: 250px; 
-    object-fit: cover; 
-    border-radius: 15px;
-    margin: 15px 0;
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:20px;
+    margin-bottom:15px;
+}
+
+h1{
+    color:#ff4d6d;
+    font-size: 24px;
 }
 
 button{
-    border: none;
-    padding: 12px 24px;
-    margin: 8px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: transform 0.2s;
+    border:none;
+    border-radius:12px;
+    padding:12px 24px;
+    margin:8px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-button:hover {
-    transform: scale(1.05);
+.yes-btn {
+    background:#4CAF50;
+    color:white;
 }
 
-.yes{background: #4CAF50; color: white;}
-.no{background: #f44336; color: white;}
+.no-btn {
+    background:#f44336;
+    color:white;
+}
 
 input[type="date"]{
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    margin-top: 10px;
-    font-family: inherit;
+    padding:10px;
+    font-size:16px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    top:-20px;
+    animation:fall 4s linear forwards;
+    z-index: 999;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+    }
 }
 </style>
+
+<script>
+(function(){
+    emailjs.init({
+        publicKey: "c2zS-SX0xFXHPRgIn" 
+    });
+})();
+</script>
 
 </head>
 <body>
 
 <div class="card" id="card">
-
-<h1>Hi Jaymee 😊</h1>
-
-<img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWp0eWZ6bXFieXN6Znd4Y3RxM3V6bW95ZXN5b3Y0d3Z3dW95Y3Z6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/C9x8gX02SnMIoAclby/giphy.gif" alt="Polite Cat">
-
-<p>I have a question ❤️</p>
-
-<button class="yes" onclick="start()">Continue</button>
-
+    <h1>Hi Jaymee 😊</h1>
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzM5OW83bjh2Mms2YWl5NmFoeTJjbDQxZnRyZzdlZXExZ3Y3aW55YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zMv36BprGxUAqoWc72/giphy.gif" alt="Cute Cat">
+    <p>I have something to ask.... ❤️</p>
+    <button class="yes-btn" onclick="start()">Continue</button>
 </div>
 
 <script>
+let yesSize = 18; 
 
 function start(){
     document.getElementById("card").innerHTML = `
-        <h2>Would you like to hang out with me after class, or on a day that you're free? 😊❤️</h2>
-
-        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW00M3R5N3M1ZHp5Y2pjeXF0YnkybHpxbXg0ZnV5cnA0cXN5Y2p6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/t372fGo6fIdI7E8EGm/giphy.gif" alt="Hopeful Cat">
-
-        <br>
-        <button class="yes" onclick="showDate()">Yes ❤️</button>
-        <button class="no" onclick="confirmNo()">No 😔</button>
+        <h1>Would you like to hang out with me after class, or on a day that you're free? 😊❤️</h1>
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjdjeG9yc3QwcGVibHVmd3k3dWxxYm5rYnYxaGJlODRlb2xlY2tlcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Zl7u48zLVFgLpRwq6f/giphy.gif" alt="Cute Cat">
+        <p>I have been wanting to ask you this for a while. 😊</p>
+        <button class="yes-btn" id="yesBtn" onclick="showDatePicker()">Yes ❤️</button>
+        <button class="no-btn" id="noBtn" onclick="increaseYesSize()">No 🙈</button>
     `;
+    yesSize = 18; 
+}
+
+function increaseYesSize(){
+    yesSize += 10; 
+    const yesBtn = document.getElementById("yesBtn");
+    if(yesBtn) {
+        yesBtn.style.fontSize = yesSize + "px";
+        yesBtn.style.padding = (yesSize/1.5) + "px " + (yesSize * 1.3) + "px";
+    }
+    
+    if(yesSize >= 48) {
+        confirmNo();
+    }
 }
 
 function confirmNo(){
     document.getElementById("card").innerHTML = `
-        <h2>Are you sure? 🥺</h2>
-
-        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzh0M3I5M3Yzd3B5Ynp5c3RxM3V6bW95ZXN5b3Y0d3Z3dW95Y3Z6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/v7r86817812I70T8fC/giphy.gif" alt="Judging Cat">
-
+        <h1>Are you sure? 🥺</h1>
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXVxOGJwcXJwbmlydzk4aTZtdTZzaWplZTlqd29tMjFxdDNpdmFuNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sXv0vaA4331Ti/giphy.gif" alt="Sad Cat">
         <p>Think carefully before making the cats sad.</p>
-
-        <button class="no" onclick="sadCat()">Yes, I'm sure 😔</button>
-        <button class="yes" onclick="start()">No wait 🥺</button>
+        <button class="no-btn" onclick="showSadCat()">Yes, I'm sure 😔</button>
+        <button class="yes-btn" onclick="start()">No, wait 🥺</button>
     `;
 }
 
-function sadCat(){
+function showSadCat(){
     document.getElementById("card").innerHTML = `
-        <h2>The cat is sad now 😿</h2>
-
-        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXN0Y3F5M3V6bW95ZXN5b3Y0d3Z3dW95Y3Z6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/7Y6fG1T4AAnV7H8C7B/giphy.gif" alt="Crying Cat">
-
+        <h1>The cat is sad now 😿</h1>
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZWVra3NzaHJ3aThmd3oxbHB3ZDN1MHJkMzE1MHZyM3NzOXh1MWhyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ruyS8Zw9sBqE5UjOnY/giphy.gif" alt="Very Sad Cat">
         <p>The cats were hoping you'd say yes.</p>
         <p>But thank you for being honest ❤️</p>
     `;
 }
 
-function showDate(){
+function showDatePicker(){
+    confettiEffect();
     document.getElementById("card").innerHTML = `
-        <h2>Yay! 🎉</h2>
-
-        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3N0Y3F5M3V6bW95ZXN5b3Y0d3Z3dW95Y3Z6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9fUVOLfLR7XEDw6M63/giphy.gif" alt="Happy Dancing Cat">
-
-        <p>When would you like us to hang out? 😊</p>
-
+        <h1>Yay! 🎉</h1>
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZG1xaXcyeTBvZHZueXNjNmgzcm03ZGN2OHp6ejhiMDFibjRndHdpNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/T70hpBP1L0N7U0jtkq/giphy.gif" alt="Happy Cat">
+        <p>You just made my day. ❤️</p>
+        <p>I'd love to spend some time with you. 😊</p>
+        <p>When would you like us to go on our date?</p>
         <input type="date" id="datePicker">
-
         <br><br>
-
-        <button class="yes" onclick="confirmDate()">Choose This Date ❤️</button>
+        <button class="yes-btn" onclick="confirmDate()">Choose This Date ❤️</button>
     `;
 }
 
 function confirmDate(){
     const selectedDate = document.getElementById("datePicker").value;
-    
+
     if(!selectedDate){
         alert("Please choose a date first 😊");
         return;
     }
-    
+
+    emailjs.send(
+        "chrisnel885",
+        "template_xmpfzyj",
+        {
+            selected_date: selectedDate
+        }
+    )
+    .then(() => {
+        showFinalThankYou(selectedDate, "Thank You ❤️");
+    })
+    .catch(() => {
+        // Fallback option keeps working gracefully even if an unexpected network error occurs
+        showFinalThankYou(selectedDate, "Thank You So Much Aemie ❤️");
+    });
+}
+
+function showFinalThankYou(date, headlineText){
+    confettiEffect();
     document.getElementById("card").innerHTML = `
-        <h2>Thank You ❤️</h2>
-
-        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDN0Y3F5M3V6bW95ZXN5b3Y0d3Z3dW95Y3Z6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3oz8xInYnmAArX09HO/giphy.gif" alt="Cat with Hearts">
-
-        <p>Date selected: <strong>${selectedDate}</strong></p>
-        <p>Looking forward to seeing you 😊</p>
+        <h1>${headlineText}</h1>
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXdhNXU3OGJjNDhsc3QzNWp5MXhyeWE2cGw3emp5bW0xcmw1OTY3OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QaO94TsFEnZauKsboY/giphy.gif" alt="Sweet Cat">
+        <p>Date selected: <strong>${date}</strong></p>
+        <p>Looking forward to seeing you. 😊</p>
     `;
 }
 
+function confettiEffect(){
+    for(let i=0;i<80;i++){
+        const c = document.createElement("div");
+        c.classList.add("confetti");
+        c.style.left = Math.random()*100 + "vw";
+        c.style.background = `hsl(${Math.random()*360},100%,50%)`;
+        document.body.appendChild(c);
+        setTimeout(() => c.remove(), 4000);
+    }
+}
 </script>
 
 </body>
