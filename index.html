@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Special Invitation ❤️</title>
+
 <style>
 body{
     margin:0;
@@ -15,106 +16,134 @@ body{
     align-items:center;
     text-align:center;
 }
+
 .card{
     background:white;
     width:90%;
-    max-width:500px;
-    padding:30px;
+    max-width:450px;
+    padding:25px;
     border-radius:20px;
     box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
+
 img{
     width:250px;
-    max-width:100%;
-    border-radius:20px;
-    margin-bottom:15px;
-    height: 250px;
-    object-fit: cover;
+    height: 250px; /* Pantay na laki para sa memes */
+    object-fit: cover; /* Para hindi ma-stretch ang meme */
+    border-radius:15px;
+    margin:10px 0;
 }
-h1{
-    color:#ff4d6d;
-    font-size: 24px;
-}
+
 button{
     border:none;
-    border-radius:12px;
-    padding:12px 24px;
+    padding:12px 20px;
     margin:8px;
-    font-size:18px;
+    border-radius:10px;
     cursor:pointer;
+    font-size:16px;
+    transition: transform 0.2s;
 }
-.yes{background:#4CAF50; color:white;}
-.no{background:#f44336; color:white;}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.yes{background:#4CAF50;color:white;}
+.no{background:#f44336;color:white;}
+
 input[type="date"]{
     padding:10px;
-    font-size:16px;
     border-radius:10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
 }
 </style>
+
 </head>
+
 <body>
 
 <div class="card" id="card">
-    <h1>Hi Jaymee 😊</h1>
-    <img src="https://media.tenor.com/w1-v6T8A8gIAAAAi/cat-sweet.gif" alt="Cute Cat">
-    <p>I made something for you ❤️</p>
-    <button class="yes" onclick="start()">Continue</button>
+
+<h1>Hi Jaymee 😊</h1>
+
+<img src="https://media.tenor.com/J4_8_M44-7IAAAAi/polite-cat-cat.gif" alt="Polite Cat Meme">
+
+<p>I made something for you ❤️</p>
+
+<button class="yes" onclick="start()">Continue</button>
+
 </div>
 
 <script>
+
 function start(){
     document.getElementById("card").innerHTML = `
-        <h1>Would you like to hang out with me after class, or on a day that works best for you? 😊❤️</h1>
-        <img src="https://media.tenor.com/wP0H-VfUaYgAAAAi/mochi-peach.gif" alt="Happy Cat">
-        <br>
-        <button class="yes" onclick="showDatePicker()">Yes ❤️</button>
+        <h2>Would you like to hang out with me after class, or anytime you're free? 😊❤️</h2>
+
+        <img src="https://media.tenor.com/AbZ6z24j9vMAAAAi/cat-meme.gif" alt="Excited Cat Meme">
+
+        <button class="yes" onclick="showDate()">Yes ❤️</button>
         <button class="no" onclick="confirmNo()">No 😔</button>
     `;
 }
 
 function confirmNo(){
     document.getElementById("card").innerHTML = `
-        <h1>Are you sure? 🥺</h1>
-        <img src="https://media.tenor.com/m2pB2h3B3p0AAAAi/cat-cry.gif" alt="Sad Cat">
+        <h2>Are you sure? 🥺</h2>
+
+        <img src="https://media.tenor.com/83uE_13z4_MAAAAi/woman-yelling-at-cat-meme.gif" alt="Woman Yelling at Cat Meme">
+
         <p>Think carefully before making the cats sad.</p>
-        <button class="no" onclick="showSadCat()">Yes, I'm sure 😔</button>
-        <button class="yes" onclick="start()">No, wait 🥺</button>
+
+        <button class="no" onclick="sadCat()">Yes, I'm sure 😿</button>
+        <button class="yes" onclick="start()">No wait 🥺</button>
     `;
 }
 
-function showSadCat(){
+function sadCat(){
     document.getElementById("card").innerHTML = `
-        <h1>The cat is sad now 😿</h1>
-        <img src="https://media.tenor.com/T0T_v9v6580AAAAi/peach-cat-crying.gif" alt="Very Sad Cat">
-        <p>The cats were hoping you'd say yes.</p>
+        <h2>The cat is sad now 😿</h2>
+
+        <img src="https://media.tenor.com/S7_01_f1vE0AAAAi/cat-crying.gif" alt="Sad Cat Meme">
+
         <p>But thank you for being honest ❤️</p>
     `;
 }
 
-function showDatePicker(){
+function showDate(){
     document.getElementById("card").innerHTML = `
-        <h1>Yay! 🎉</h1>
-        <img src="https://media.tenor.com/0i_p5wzFmY8AAAAi/hearts-cats.gif" alt="Excited Cat">
-        <p>You just made my day ❤️</p>
-        <p>When would you like us to hang out? 😊</p>
+        <h2>Yay! 🎉</h2>
+
+        <img src="https://media.tenor.com/0i_p5wzFmY8AAAAi/hearts-cats.gif" alt="Party Cat Meme">
+
+        <p>Pick a date 😊</p>
+
         <input type="date" id="datePicker">
+
         <br><br>
-        <button class="yes" onclick="confirmDate()">Choose This Date ❤️</button>
+
+        <button class="yes" onclick="confirmDate()">Choose ❤️</button>
     `;
 }
 
+// Function para sa huling confirmation screen pagkapili ng date
 function confirmDate(){
     const selectedDate = document.getElementById("datePicker").value;
+    
     if(!selectedDate){
-        alert("Please choose a date first 😊");
+        alert("Please pick a date first! 😊");
         return;
     }
+    
     document.getElementById("card").innerHTML = `
-        <h1>Thank You ❤️</h1>
-        <p>Date selected: <strong>${selectedDate}</strong></p>
-        <p>Looking forward to seeing you 😊</p>
+        <h2>Thank You Aemie! ❤️</h2>
+        <img src="https://media.tenor.com/w1-v6T8A8gIAAAAi/cat-sweet.gif" alt="Sweet Cat Meme">
+        <p>You selected: <strong>${selectedDate}</strong></p>
+        <p>Can't wait! See you then 😊</p>
     `;
 }
+
 </script>
 
 </body>
