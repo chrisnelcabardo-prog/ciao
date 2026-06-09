@@ -1,11 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Special Invitation ❤️</title>
-
 <style>
 body{
     margin:0;
@@ -17,7 +15,6 @@ body{
     align-items:center;
     text-align:center;
 }
-
 .card{
     background:white;
     width:90%;
@@ -26,18 +23,17 @@ body{
     border-radius:20px;
     box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
-
 img{
     width:250px;
     max-width:100%;
     border-radius:20px;
     margin-bottom:15px;
+    height: 250px;
+    object-fit: cover;
 }
-
 h1{
     color:#ff4d6d;
 }
-
 button{
     border:none;
     border-radius:12px;
@@ -46,17 +42,8 @@ button{
     font-size:18px;
     cursor:pointer;
 }
-
-.yes{
-    background:#4CAF50;
-    color:white;
-}
-
-.no{
-    background:#f44336;
-    color:white;
-}
-
+.yes{background:#4CAF50; color:white;}
+.no{background:#f44336; color:white;}
 input[type="date"]{
     padding:10px;
     font-size:16px;
@@ -64,136 +51,70 @@ input[type="date"]{
 }
 </style>
 </head>
-
 <body>
 
 <div class="card" id="card">
-
     <h1>Hi Jaymee 😊</h1>
-
-    <img src="cat1.webp" alt="Cute Cat">
-
-    <p>
-        I made something for you ❤️
-    </p>
-
-    <button class="yes" onclick="start()">
-        Continue
-    </button>
-
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWp0eWZ6bXFieXN6Znd4Y3RxM3V6bW95ZXN5b3Y0d3Z3dW95Y3Z6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/C9x8gX02SnMIoAclby/giphy.gif" alt="Cute Cat">
+    <p>I made something for you ❤️</p>
+    <button class="yes" onclick="start()">Continue</button>
 </div>
 
 <script>
-
 function start(){
-
     document.getElementById("card").innerHTML = `
-        <h1>
-        Would you like to hang out with me after class,
-        or on a day that works best for you? 😊❤️
-        </h1>
-
-        <img src="cat2.gif" alt="Cute Cat">
-
-        <button class="yes" onclick="showDatePicker()">
-            Yes ❤️
-        </button>
-
-        <button class="no" onclick="confirmNo()">
-            No 😔
-        </button>
+        <h1>Would you like to hang out with me after class, or on a day that works best for you? 😊❤️</h1>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW90M3R5N3M1ZHp5Y2pjeXF0YnkybHpxbXg0ZnV5cnA0cXN5Y2p6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/t372fGo6fIdI7E8EGm/giphy.gif" alt="Happy Cat">
+        <br>
+        <button class="yes" onclick="showDatePicker()">Yes ❤️</button>
+        <button class="no" onclick="confirmNo()">No 😔</button>
     `;
 }
 
 function confirmNo(){
-
     document.getElementById("card").innerHTML = `
         <h1>Are you sure? 🥺</h1>
-
-        <img src="cat3.webp" alt="Sad Cat">
-
-        <p>
-        Think carefully before making the cats sad.
-        </p>
-
-        <button class="no" onclick="showSadCat()">
-            Yes, I'm sure 😔
-        </button>
-
-        <button class="yes" onclick="start()">
-            No, wait 🥺
-        </button>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzh0M3I5M3Yzd3B5Ynp5c3RxM3V6bW95ZXN5b3Y0d3Z3dW95Y3Z6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/v7r86817812I70T8fC/giphy.gif" alt="Sad Cat">
+        <p>Think carefully before making the cats sad.</p>
+        <button class="no" onclick="showSadCat()">Yes, I'm sure 😔</button>
+        <button class="yes" onclick="start()">No, wait 🥺</button>
     `;
 }
 
 function showSadCat(){
-
     document.getElementById("card").innerHTML = `
         <h1>The cat is sad now 😿</h1>
-
-        <img src="cat4.webp" alt="Very Sad Cat">
-
-        <p>
-        The cats were hoping you'd say yes.
-        </p>
-
-        <p>
-        But thank you for being honest ❤️
-        </p>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXN0Y3F5M3V6bW95ZXN5b3Y0d3Z3dW95Y3Z6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/7Y6fG1T4AAnV7H8C7B/giphy.gif" alt="Very Sad Cat">
+        <p>The cats were hoping you'd say yes.</p>
+        <p>But thank you for being honest ❤️</p>
     `;
 }
 
 function showDatePicker(){
-
     document.getElementById("card").innerHTML = `
         <h1>Yay! 🎉</h1>
-
-        <img src="cat5.gif" alt="Happy Cat">
-
-        <p>
-        You just made my day ❤️
-        </p>
-
-        <p>
-        When would you like us to hang out? 😊
-        </p>
-
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3N0Y3F5M3V6bW95ZXN5b3Y0d3Z3dW95Y3Z6ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9fUVOLfLR7XEDw6M63/giphy.gif" alt="Excited Cat">
+        <p>You just made my day ❤️</p>
+        <p>When would you like us to hang out? 😊</p>
         <input type="date" id="datePicker">
-
         <br><br>
-
-        <button class="yes" onclick="confirmDate()">
-            Choose This Date ❤️
-        </button>
+        <button class="yes" onclick="confirmDate()">Choose This Date ❤️</button>
     `;
 }
 
 function confirmDate(){
-
-    const selectedDate =
-        document.getElementById("datePicker").value;
-
+    const selectedDate = document.getElementById("datePicker").value;
     if(!selectedDate){
         alert("Please choose a date first 😊");
         return;
     }
-
     document.getElementById("card").innerHTML = `
         <h1>Thank You ❤️</h1>
-
-        <p>
-        Date selected:
-        <strong>${selectedDate}</strong>
-        </p>
-
-        <p>
-        Looking forward to seeing you 😊
-        </p>
+        <p>Date selected: <strong>${selectedDate}</strong></p>
+        <p>Looking forward to seeing you 😊</p>
     `;
 }
-
 </script>
 
 </body>
 </html>
-```
