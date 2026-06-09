@@ -8,39 +8,40 @@
 <style>
 body{
     margin:0;
-    font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#ffd6e0,#ffeef5);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd6e0, #ffeef5);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .card{
-    background:white;
-    width:90%;
-    max-width:450px;
-    padding:25px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    background: white;
+    width: 90%;
+    max-width: 450px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
 }
 
 img{
-    width:250px;
-    height: 250px; /* Pantay na laki para sa memes */
-    object-fit: cover; /* Para hindi ma-stretch ang meme */
-    border-radius:15px;
-    margin:10px 0;
+    width: 250px;
+    height: 250px; /* Pantay-pantay na parisukat para sa memes */
+    object-fit: cover; /* Hindi madi-distort o mabe-bend ang mukha ng pusa */
+    border-radius: 15px;
+    margin: 15px 0;
 }
 
 button{
-    border:none;
-    padding:12px 20px;
-    margin:8px;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:16px;
+    border: none;
+    padding: 12px 24px;
+    margin: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
     transition: transform 0.2s;
 }
 
@@ -48,26 +49,28 @@ button:hover {
     transform: scale(1.05);
 }
 
-.yes{background:#4CAF50;color:white;}
-.no{background:#f44336;color:white;}
+.yes{background: #4CAF50; color: white;}
+.no{background: #f44336; color: white;}
 
 input[type="date"]{
-    padding:10px;
-    border-radius:10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
     border: 1px solid #ccc;
     margin-top: 10px;
+    font-family: inherit;
 }
 </style>
 
 </head>
-
 <body>
 
 <div class="card" id="card">
 
 <h1>Hi Jaymee 😊</h1>
 
-<img src="https://media.tenor.com/J4_8_M44-7IAAAAi/polite-cat-cat.gif" alt="Polite Cat Meme">
+<!-- 1st: Polite Cat Looking Kind of Nervous -->
+<img src="https://i.pinimg.com/originals/30/ee/d2/30eed27b875cb450a80e0eecc0a6b7d1.jpg" alt="Polite Cat">
 
 <p>I made something for you ❤️</p>
 
@@ -79,10 +82,12 @@ input[type="date"]{
 
 function start(){
     document.getElementById("card").innerHTML = `
-        <h2>Would you like to hang out with me after class, or anytime you're free? 😊❤️</h2>
+        <h2>Would you like to hang out with me after class, or on a day that works best for you? 😊❤️</h2>
 
-        <img src="https://media.tenor.com/AbZ6z24j9vMAAAAi/cat-meme.gif" alt="Excited Cat Meme">
+        <!-- 2nd: Staring Cat with Big Eyes Looking Hopeful -->
+        <img src="https://i.pinimg.com/originals/9f/f0/bf/9ff0bfff812301f251c86e08ddf18830.jpg" alt="Hopeful Cat">
 
+        <br>
         <button class="yes" onclick="showDate()">Yes ❤️</button>
         <button class="no" onclick="confirmNo()">No 😔</button>
     `;
@@ -92,11 +97,12 @@ function confirmNo(){
     document.getElementById("card").innerHTML = `
         <h2>Are you sure? 🥺</h2>
 
-        <img src="https://media.tenor.com/83uE_13z4_MAAAAi/woman-yelling-at-cat-meme.gif" alt="Woman Yelling at Cat Meme">
+        <!-- 3rd: Grumpy/Suspicious Cat Looking Judgely -->
+        <img src="https://i.pinimg.com/originals/94/34/ec/9434ece848a60c04f936bd5b6d57bdae.jpg" alt="Judging Cat">
 
         <p>Think carefully before making the cats sad.</p>
 
-        <button class="no" onclick="sadCat()">Yes, I'm sure 😿</button>
+        <button class="no" onclick="sadCat()">Yes, I'm sure 😔</button>
         <button class="yes" onclick="start()">No wait 🥺</button>
     `;
 }
@@ -105,8 +111,10 @@ function sadCat(){
     document.getElementById("card").innerHTML = `
         <h2>The cat is sad now 😿</h2>
 
-        <img src="https://media.tenor.com/S7_01_f1vE0AAAAi/cat-crying.gif" alt="Sad Cat Meme">
+        <!-- 4th: Crying Cat with Tears in Eyes -->
+        <img src="https://i.pinimg.com/originals/60/a4/bf/60a4bf8dfca6b41dcb96f3a3d5e2079f.jpg" alt="Crying Cat">
 
+        <p>The cats were hoping you'd say yes.</p>
         <p>But thank you for being honest ❤️</p>
     `;
 }
@@ -115,36 +123,41 @@ function showDate(){
     document.getElementById("card").innerHTML = `
         <h2>Yay! 🎉</h2>
 
-        <img src="https://media.tenor.com/0i_p5wzFmY8AAAAi/hearts-cats.gif" alt="Party Cat Meme">
+        <!-- 5th: Cute Dancing/Wiggling Cat Celebrating -->
+        <img src="https://i.pinimg.com/originals/47/3d/09/473d097dfbd768b7ca670bf75ff2028c.gif" alt="Happy Dancing Cat">
 
-        <p>Pick a date 😊</p>
+        <p>When would you like us to hang out? 😊</p>
 
         <input type="date" id="datePicker">
 
         <br><br>
 
-        <button class="yes" onclick="confirmDate()">Choose ❤️</button>
+        <button class="yes" onclick="confirmDate()">Choose This Date ❤️</button>
     `;
 }
 
-// Function para sa huling confirmation screen pagkapili ng date
 function confirmDate(){
     const selectedDate = document.getElementById("datePicker").value;
     
     if(!selectedDate){
-        alert("Please pick a date first! 😊");
+        alert("Please choose a date first 😊");
         return;
     }
     
     document.getElementById("card").innerHTML = `
-        <h2>Thank You Aemie! ❤️</h2>
-        <img src="https://media.tenor.com/w1-v6T8A8gIAAAAi/cat-sweet.gif" alt="Sweet Cat Meme">
-        <p>You selected: <strong>${selectedDate}</strong></p>
-        <p>Can't wait! See you then 😊</p>
+        <h2>Thank You ❤️</h2>
+
+        <!-- 6th: Sweet Loving Cat with Heart Eyes Meme -->
+        <img src="https://i.pinimg.com/originals/be/bc/97/bebc97e034aefd405232d3dfdd79899f.jpg" alt="Cat with Hearts">
+
+        <p>Date selected: <strong>${selectedDate}</strong></p>
+        <p>Looking forward to seeing you 😊</p>
     `;
 }
 
 </script>
 
+</body>
+</html>
 </body>
 </html>
